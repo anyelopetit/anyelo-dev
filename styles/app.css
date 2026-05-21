@@ -65,6 +65,58 @@
     @apply bg-card border-default rounded-2xl shadow-soft;
   }
 
+  /* Spell: cursor spotlight. Cheap, GPU-friendly, no layout shifts. */
+  .spell-spotlight {
+    @apply relative overflow-hidden;
+  }
+
+  .spell-spotlight::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 220ms ease;
+    background: radial-gradient(
+      180px circle at var(--mx, 50%) var(--my, 35%),
+      rgb(var(--color-accent) / 0.14),
+      transparent 58%
+    );
+  }
+
+  .spell-spotlight:hover::before {
+    opacity: 1;
+  }
+
+  /* Spell: premium shimmer on primary buttons (subtle). */
+  .spell-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .spell-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    transform: translateX(-120%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(255 255 255 / 0.12),
+      transparent
+    );
+  }
+
+  .spell-shimmer:hover::after {
+    transform: translateX(120%);
+    transition: transform 900ms var(--easing-primary);
+  }
+
+  /* Easter egg glow toggle on hero photo. */
+  .spell-glow {
+    box-shadow: 0 0 0 1px rgb(var(--color-accent) / 0.25), var(--shadow-glow);
+  }
+
   .hero-shell {
     @apply relative overflow-hidden;
     background:
