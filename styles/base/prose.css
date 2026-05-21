@@ -1,0 +1,25 @@
+/* Minimal prose styling for blog without extra deps. */
+.prose {
+  line-height: 1.75;
+}
+
+.prose h2 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.prose p {
+  margin-top: 0.9rem;
+  color: rgb(var(--color-text-secondary));
+}
+
+.prose a {
+  color: rgb(var(--color-accent));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-invert {
+  color: rgb(var(--color-text-secondary));
+}

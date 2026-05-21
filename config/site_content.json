@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "badge": "Disponibilidad: nuevos proyectos",
+    "headline": "Construyo soluciones digitales que generan impacto.",
+    "subheadline": "Ingeniero de Software con 10+ anos creando productos, automatizaciones e IA aplicada.",
+    "ctaPrimary": { "label": "Ver proyectos", "href": "#proyectos" },
+    "ctaSecondary": { "label": "Hablemos", "href": "#contacto" },
+    "metrics": [
+      { "label": "Anos", "value": "10+" },
+      { "label": "Proyectos", "value": "50+" },
+      { "label": "Clientes", "value": "30+" },
+      { "label": "Compromiso", "value": "100%" }
+    ]
+  }
+}

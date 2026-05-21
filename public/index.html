@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>Anyelo | Senior Software Engineer, SaaS, Automatizacion e IA aplicada</title>
+    <meta
+      name="description"
+      content="Ingeniero de software senior con 10+ anos construyendo SaaS, automatizaciones, dashboards, sistemas administrativos e IA aplicada para negocios reales en LATAM."
+    />
+    <link rel="canonical" href="https://anyelo.dev/" />
+
+    <meta property="og:title" content="Anyelo | Senior Software Engineer" />
+    <meta
+      property="og:description"
+      content="SaaS, automatizacion e IA aplicada con criterio de producto."
+    />
+    <meta property="og:url" content="https://anyelo.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://anyelo.dev/assets/images/og/og-home.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/assets/app.css" />
+    <script type="module" src="/assets/app.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Anyelo",
+        "url": "https://anyelo.dev/",
+        "jobTitle": "Senior Software Engineer",
+        "sameAs": [
+          "https://github.com/",
+          "https://www.linkedin.com/",
+          "https://www.instagram.com/"
+        ],
+        "knowsAbout": [
+          "SaaS",
+          "Automatizacion",
+          "Arquitectura de Software",
+          "APIs",
+          "Dashboards",
+          "IA aplicada"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="sr-only focus:not-sr-only focus-visible:ring-2 focus-visible:ring-accent/60" href="#main">
+      Saltar al contenido
+    </a>
+
+    <header
+      class="fixed left-0 right-0 top-0 z-50"
+      data-component="header"
+    >
+      <div class="section-shell pt-4">
+        <div
+          class="premium-card flex items-center justify-between px-4 py-3"
+          data-header="shell"
+        >
+          <a class="flex items-center gap-2" href="#inicio" aria-label="Ir al inicio">
+            <img src="/assets/icons/mark.svg" alt="Anyelo" class="h-7 w-7" />
+            <span class="text-sm font-semibold text-textPrimary">Anyelo</span>
+          </a>
+
+          <nav class="hidden items-center gap-6 text-sm text-textSecondary md:flex" aria-label="Principal">
+            <a class="hover:text-textPrimary transition duration-fast" href="#sobre-mi">Sobre mi</a>
+            <a class="hover:text-textPrimary transition duration-fast" href="#proyectos">Proyectos</a>
+            <a class="hover:text-textPrimary transition duration-fast" href="#servicios">Servicios</a>
+            <a class="hover:text-textPrimary transition duration-fast" href="#experiencia">Experiencia</a>
+            <a class="hover:text-textPrimary transition duration-fast" href="/blog/">Blog</a>
+            <a class="hover:text-textPrimary transition duration-fast" href="#contacto">Contacto</a>
+          </nav>
+
+          <div class="flex items-center gap-2">
+            <a class="btn-primary hidden sm:inline-flex" href="#contacto">Hablemos</a>
+              <button
+                class="btn-secondary inline-flex h-11 w-11 px-0 md:hidden"
+                type="button"
+                aria-label="Abrir menu"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              data-component="mobile-menu-button"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="pointer-events-none fixed inset-0 z-50 opacity-0"
+        data-component="mobile-menu"
+        hidden
+      >
+        <div class="absolute inset-0 bg-background/70 backdrop-blur" data-mobile-menu="backdrop"></div>
+        <div class="section-shell pt-4">
+          <div class="premium-card overflow-hidden p-2">
+            <div class="flex items-center justify-between px-3 py-2">
+              <span class="text-sm font-semibold text-textPrimary">Menu</span>
+              <button class="btn-secondary h-10 w-10 px-0" type="button" aria-label="Cerrar menu" data-mobile-menu="close">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </button>
+            </div>
+            <nav class="flex flex-col gap-1 px-2 pb-2 text-sm" aria-label="Movil">
+              <a class="rounded-lg px-3 py-3 hover:bg-surfaceAlt" href="#sobre-mi">Sobre mi</a>
+              <a class="rounded-lg px-3 py-3 hover:bg-surfaceAlt" href="#proyectos">Proyectos</a>
+              <a class="rounded-lg px-3 py-3 hover:bg-surfaceAlt" href="#servicios">Servicios</a>
+              <a class="rounded-lg px-3 py-3 hover:bg-surfaceAlt" href="#experiencia">Experiencia</a>
+              <a class="rounded-lg px-3 py-3 hover:bg-surfaceAlt" href="/blog/">Blog</a>
+              <a class="rounded-lg px-3 py-3 hover:bg-surfaceAlt" href="#contacto">Contacto</a>
+              <a class="btn-primary mt-2" href="#contacto">Hablemos</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="pt-28" tabindex="-1">
+      <section id="inicio" class="hero-shell">
+        <div aria-hidden="true" class="absolute inset-0">
+          <div class="absolute inset-0 bg-[url('/assets/images/og/og-home.png')] bg-cover bg-center opacity-[0.18] blur-2xl scale-110"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background"></div>
+        </div>
+        <div class="section-shell py-14 sm:py-20">
+          <div class="grid items-center gap-10 lg:grid-cols-12">
+            <div class="lg:col-span-6">
+              <div class="nav-pill mb-5 w-fit">
+                <span class="inline-block h-2 w-2 rounded-full bg-success"></span>
+                <span>Disponibilidad: Nuevos proyectos</span>
+              </div>
+
+              <h1 class="text-4xl font-semibold leading-[1.05] text-textPrimary sm:text-6xl">
+                Construyo soluciones<br />
+                digitales que<br />
+                <span class="text-accent">generan impacto</span>.
+              </h1>
+              <p class="mt-5 max-w-prose text-base leading-relaxed text-textSecondary sm:text-lg">
+                Ingeniero de Software con mas de 10 anos de experiencia creando productos, automatizaciones y experiencias
+                digitales que impulsan negocios.
+              </p>
+
+              <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+                <a class="btn-primary" href="#proyectos">Ver proyectos</a>
+                <a class="btn-secondary" href="#contacto">Hablemos</a>
+              </div>
+
+              <dl class="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                <div class="metric-card">
+                  <dt class="text-sm font-semibold text-textPrimary">10+</dt>
+                  <dd class="mt-1 text-xs text-textMuted">Anos de experiencia</dd>
+                </div>
+                <div class="metric-card">
+                  <dt class="text-sm font-semibold text-textPrimary">50+</dt>
+                  <dd class="mt-1 text-xs text-textMuted">Proyectos completados</dd>
+                </div>
+                <div class="metric-card">
+                  <dt class="text-sm font-semibold text-textPrimary">30+</dt>
+                  <dd class="mt-1 text-xs text-textMuted">Clientes satisfechos</dd>
+                </div>
+                <div class="metric-card">
+                  <dt class="text-sm font-semibold text-textPrimary">100%</dt>
+                  <dd class="mt-1 text-xs text-textMuted">Compromiso</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="relative lg:col-span-6">
+              <div class="hero-photo-ambient" aria-hidden="true"></div>
+              <figure class="hero-photo-frame">
+                <img
+                  src="/assets/images/hero/me.png"
+                  width="576"
+                  height="576"
+                  alt="Retrato profesional de Anyelo"
+                  class="mx-auto w-full max-w-[560px] select-none"
+                  fetchpriority="high"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-surface/60 py-10">
+        <div class="section-shell">
+          <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-textMuted">
+            <span class="nav-pill">SaaS</span>
+            <span class="nav-pill">Automatizacion</span>
+            <span class="nav-pill">IA aplicada</span>
+            <span class="nav-pill">APIs</span>
+            <span class="nav-pill">Dashboards</span>
+            <span class="nav-pill">Cloudflare</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="theme-light bg-background py-2">
+        <div class="soft-divider"></div>
+      </section>
+
+      <section id="sobre-mi" class="theme-light bg-background py-16 sm:py-24">
+        <div class="section-shell">
+          <p class="section-eyebrow">SOBRE MI</p>
+          <div class="mt-4 grid gap-10 lg:grid-cols-12">
+            <div class="lg:col-span-5">
+              <h2 class="section-title">
+                Ingeniero. Creador.<br />
+                <span class="text-accent">Solucionador</span> de problemas.
+              </h2>
+              <p class="mt-4 text-textSecondary leading-relaxed">
+                Me apasiona convertir ideas en productos digitales escalables. Combino estrategia, tecnologia
+                e IA aplicada para construir soluciones que realmente hacen la diferencia.
+              </p>
+              <a class="btn-secondary mt-6 inline-flex" href="#experiencia">Conoce mi historia</a>
+            </div>
+            <div class="lg:col-span-7">
+              <div class="premium-card-solid p-5 sm:p-6">
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <article class="rounded-xl border border-border/60 bg-surface-alt p-5 shadow-soft">
+                    <h3 class="text-sm font-semibold text-textPrimary">Mentalidad de dueno</h3>
+                    <p class="mt-2 text-sm text-textSecondary">Pienso en negocio, no solo en codigo.</p>
+                  </article>
+                  <article class="rounded-xl border border-border/60 bg-surface-alt p-5 shadow-soft">
+                    <h3 class="text-sm font-semibold text-textPrimary">Enfoque en resultados</h3>
+                    <p class="mt-2 text-sm text-textSecondary">Soluciones que generan impacto medible.</p>
+                  </article>
+                  <article class="rounded-xl border border-border/60 bg-surface-alt p-5 shadow-soft">
+                    <h3 class="text-sm font-semibold text-textPrimary">Tecnologia moderna</h3>
+                    <p class="mt-2 text-sm text-textSecondary">Siempre aprendiendo y aplicando lo mejor.</p>
+                  </article>
+                  <article class="rounded-xl border border-border/60 bg-surface-alt p-5 shadow-soft">
+                    <h3 class="text-sm font-semibold text-textPrimary">Automatizacion</h3>
+                    <p class="mt-2 text-sm text-textSecondary">Hago mas con menos tiempo y recursos.</p>
+                  </article>
+                  <article class="rounded-xl border border-border/60 bg-surface-alt p-5 shadow-soft">
+                    <h3 class="text-sm font-semibold text-textPrimary">Comunicacion clara</h3>
+                    <p class="mt-2 text-sm text-textSecondary">Transparente, directo y orientado a objetivos.</p>
+                  </article>
+                  <article class="rounded-xl border border-border/60 bg-surface-alt p-5 shadow-soft">
+                    <h3 class="text-sm font-semibold text-textPrimary">IA aplicada</h3>
+                    <p class="mt-2 text-sm text-textSecondary">Integro IA para crear ventajas competitivas.</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proyectos" class="theme-light bg-background py-16 sm:py-24">
+        <div class="section-shell">
+          <div class="flex items-end justify-between gap-6">
+            <div>
+              <p class="section-eyebrow">PROYECTOS DESTACADOS</p>
+              <h2 class="section-title mt-3">Productos reales. Impacto real.</h2>
+            </div>
+            <a class="btn-secondary hidden sm:inline-flex" href="#contacto">Ver todos los proyectos</a>
+          </div>
+
+          <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <article class="premium-card-solid overflow-hidden hover:shadow-medium transition-shadow duration-300">
+              <div class="relative aspect-[16/10] bg-surface-alt">
+                <img src="/assets/images/og/og-home.png" alt="Screenshot del proyecto Pidy" class="absolute inset-0 h-full w-full object-cover object-left-top" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/15 via-black/0 to-black/0" aria-hidden="true"></div>
+                <div class="absolute left-4 top-4 grid h-10 w-10 place-items-center rounded-xl bg-surface shadow-soft">
+                  <span class="text-sm font-semibold text-accent">P</span>
+                </div>
+              </div>
+              <div class="p-5">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-sm font-semibold text-textPrimary">Pidy</h3>
+                  <span class="nav-pill">Web App</span>
+                </div>
+                <p class="mt-3 text-sm text-textSecondary">Plataforma de pedidos y delivery en tiempo real.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="nav-pill">Next.js</span>
+                  <span class="nav-pill">NestJS</span>
+                  <span class="nav-pill">PostgreSQL</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="premium-card-solid overflow-hidden hover:shadow-medium transition-shadow duration-300">
+              <div class="relative aspect-[16/10] bg-surface-alt">
+                <img src="/assets/images/og/og-home.png" alt="Screenshot del proyecto Livy / Predio" class="absolute inset-0 h-full w-full object-cover object-center" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/15 via-black/0 to-black/0" aria-hidden="true"></div>
+                <div class="absolute left-4 top-4 grid h-10 w-10 place-items-center rounded-xl bg-surface shadow-soft">
+                  <span class="text-sm font-semibold text-success">L</span>
+                </div>
+              </div>
+              <div class="p-5">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-sm font-semibold text-textPrimary">Livy / Predio</h3>
+                  <span class="nav-pill">SaaS</span>
+                </div>
+                <p class="mt-3 text-sm text-textSecondary">Gestion inmobiliaria para propiedades y contratos.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="nav-pill">Node.js</span>
+                  <span class="nav-pill">MongoDB</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="premium-card-solid overflow-hidden hover:shadow-medium transition-shadow duration-300">
+              <div class="relative aspect-[16/10] bg-surface-alt">
+                <img src="/assets/images/og/og-home.png" alt="Screenshot del proyecto LegalRadar" class="absolute inset-0 h-full w-full object-cover object-right-top" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/15 via-black/0 to-black/0" aria-hidden="true"></div>
+                <div class="absolute left-4 top-4 grid h-10 w-10 place-items-center rounded-xl bg-surface shadow-soft">
+                  <span class="text-sm font-semibold text-warning">R</span>
+                </div>
+              </div>
+              <div class="p-5">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-sm font-semibold text-textPrimary">LegalRadar</h3>
+                  <span class="nav-pill">Dashboard</span>
+                </div>
+                <p class="mt-3 text-sm text-textSecondary">Analisis y gestion legal con IA.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="nav-pill">OpenAI</span>
+                  <span class="nav-pill">Tailwind</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="premium-card-solid overflow-hidden hover:shadow-medium transition-shadow duration-300">
+              <div class="relative aspect-[16/10] bg-surface-alt">
+                <img src="/assets/images/og/og-home.png" alt="Screenshot del proyecto Agnostic OS" class="absolute inset-0 h-full w-full object-cover object-center" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/15 via-black/0 to-black/0" aria-hidden="true"></div>
+                <div class="absolute left-4 top-4 grid h-10 w-10 place-items-center rounded-xl bg-surface shadow-soft">
+                  <span class="text-sm font-semibold text-secondary">A</span>
+                </div>
+              </div>
+              <div class="p-5">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-sm font-semibold text-textPrimary">Agnostic OS</h3>
+                  <span class="nav-pill">SaaS</span>
+                </div>
+                <p class="mt-3 text-sm text-textSecondary">Sistema modular para operaciones complejas.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="nav-pill">TypeScript</span>
+                  <span class="nav-pill">Node.js</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicios" class="theme-light bg-background py-16 sm:py-24">
+        <div class="section-shell">
+          <p class="section-eyebrow">SERVICIOS</p>
+          <h2 class="section-title mt-3">Como puedo <span class="text-accent">ayudarte</span></h2>
+          <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <article class="premium-card-solid p-6">
+              <h3 class="text-sm font-semibold text-textPrimary">Desarrollo de Software</h3>
+              <p class="mt-2 text-sm text-textSecondary">Aplicaciones web y sistemas a medida.</p>
+              <a class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent" href="#contacto">Saber mas <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="premium-card-solid p-6">
+              <h3 class="text-sm font-semibold text-textPrimary">IA y Automatizacion</h3>
+              <p class="mt-2 text-sm text-textSecondary">Procesos mas rapidos, menos costo operativo.</p>
+              <a class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent" href="#contacto">Saber mas <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="premium-card-solid p-6">
+              <h3 class="text-sm font-semibold text-textPrimary">SaaS y Plataformas</h3>
+              <p class="mt-2 text-sm text-textSecondary">Arquitectura, delivery y crecimiento.</p>
+              <a class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent" href="#contacto">Saber mas <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="premium-card-solid p-6">
+              <h3 class="text-sm font-semibold text-textPrimary">Consultoria Tech</h3>
+              <p class="mt-2 text-sm text-textSecondary">Decisiones claras y ejecucion confiable.</p>
+              <a class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-accent" href="#contacto">Saber mas <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencia" class="theme-light bg-background py-16 sm:py-24">
+        <div class="section-shell">
+          <p class="section-eyebrow">EXPERIENCIA</p>
+          <h2 class="section-title mt-3">Mi camino profesional</h2>
+          <div class="mt-10 grid gap-4">
+            <article class="premium-card-solid p-6">
+              <p class="text-xs text-textMuted">2023 - Actualidad</p>
+              <h3 class="mt-2 text-sm font-semibold text-textPrimary">Ingeniero de Software Senior</h3>
+              <p class="mt-2 text-sm text-textSecondary">IA, automatizacion y arquitectura escalable.</p>
+            </article>
+            <article class="premium-card-solid p-6">
+              <p class="text-xs text-textMuted">2019 - 2023</p>
+              <h3 class="mt-2 text-sm font-semibold text-textPrimary">Tech Lead</h3>
+              <p class="mt-2 text-sm text-textSecondary">Equipos y productos SaaS de alto impacto.</p>
+            </article>
+            <article class="premium-card-solid p-6">
+              <p class="text-xs text-textMuted">2014 - 2019</p>
+              <h3 class="mt-2 text-sm font-semibold text-textPrimary">Full Stack</h3>
+              <p class="mt-2 text-sm text-textSecondary">Apps web y mobile para empresas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="theme-light bg-background py-16 sm:py-20">
+        <div class="section-shell">
+          <p class="section-eyebrow text-center">EMPRESAS QUE HAN CONFIADO</p>
+          <h2 class="mt-4 text-center text-2xl sm:text-3xl font-semibold text-textPrimary">Trabajando con emprendedores y empresas increibles</h2>
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 text-textMuted">
+            <span class="text-sm font-semibold tracking-wide">inmuebles24</span>
+            <span class="text-sm font-semibold tracking-wide">Rappi</span>
+            <span class="text-sm font-semibold tracking-wide">PedidosYa</span>
+            <span class="text-sm font-semibold tracking-wide">Profuturo</span>
+            <span class="text-sm font-semibold tracking-wide">BCP</span>
+            <span class="text-sm font-semibold tracking-wide">Interbank</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="py-16 sm:py-24">
+        <div class="section-shell">
+          <div class="flex items-end justify-between gap-6">
+            <div>
+              <p class="section-eyebrow">BLOG</p>
+              <h2 class="section-title mt-3">Ideas practicas, sin humo</h2>
+            </div>
+            <a class="btn-secondary hidden sm:inline-flex" href="/blog/">Ver blog</a>
+          </div>
+          <div class="mt-10 grid gap-4 md:grid-cols-3">
+            <a class="premium-card block p-6" href="/blog/primer-post/">
+              <h3 class="text-sm font-semibold text-textPrimary">De 0 a 1: MVPs con criterio</h3>
+              <p class="mt-2 text-sm text-textSecondary">Como reducir riesgo y acelerar iteracion.</p>
+              <p class="mt-4 text-xs text-textMuted">Lectura: 4 min</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="theme-dark py-16 sm:py-24">
+        <div class="section-shell">
+          <div class="premium-card overflow-hidden p-10 sm:p-14">
+            <h2 class="text-3xl sm:text-4xl font-semibold text-textPrimary">Tienes un proyecto en mente?</h2>
+            <p class="mt-3 max-w-prose text-textSecondary">Cuentame que quieres construir y te digo el camino mas corto hacia un resultado real.</p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a class="btn-primary" href="#contacto">Hablemos</a>
+              <a class="btn-secondary" href="https://wa.me/" rel="noopener" target="_blank">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="theme-dark py-16 sm:py-24">
+        <div class="section-shell">
+          <p class="section-eyebrow">CONTACTO</p>
+          <h2 class="section-title mt-3">Hablemos de tu proyecto</h2>
+          <div class="mt-10 grid gap-8 lg:grid-cols-12">
+            <div class="lg:col-span-5">
+              <p class="text-textSecondary leading-relaxed">
+                Respondo rapido. Si tu solicitud es clara, la respuesta tambien.
+              </p>
+            </div>
+            <div class="lg:col-span-7">
+              <form class="premium-card p-6" data-component="contact-form" novalidate>
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label class="text-xs text-textMuted" for="name">Nombre</label>
+                    <input class="input-shell mt-2" id="name" name="name" autocomplete="name" required minlength="2" maxlength="80" />
+                  </div>
+                  <div>
+                    <label class="text-xs text-textMuted" for="email">Email</label>
+                    <input class="input-shell mt-2" id="email" name="email" type="email" autocomplete="email" required maxlength="120" />
+                  </div>
+                </div>
+
+                <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label class="text-xs text-textMuted" for="company">Empresa</label>
+                    <input class="input-shell mt-2" id="company" name="company" autocomplete="organization" maxlength="120" />
+                  </div>
+                  <div>
+                    <label class="text-xs text-textMuted" for="budget">Presupuesto</label>
+                    <select class="input-shell mt-2" id="budget" name="budget" required>
+                      <option value="" selected>Selecciona</option>
+                      <option value="<2k">&lt; 2k</option>
+                      <option value="2k-5k">2k - 5k</option>
+                      <option value="5k-10k">5k - 10k</option>
+                      <option value="10k+">10k+</option>
+                      <option value="hablemos">Hablemos</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="mt-4">
+                  <label class="text-xs text-textMuted" for="message">Mensaje</label>
+                  <textarea class="input-shell mt-2 min-h-32" id="message" name="message" required minlength="20" maxlength="1500"></textarea>
+                </div>
+
+                <div class="hidden" aria-hidden="true">
+                  <label for="website">Website</label>
+                  <input id="website" name="website" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <button class="btn-primary" type="submit" data-contact-form="submit">Enviar</button>
+                  <p class="text-xs text-textMuted" role="status" aria-live="polite" data-contact-form="status"></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="theme-dark py-12">
+      <div class="section-shell">
+        <div class="premium-card overflow-hidden p-8 sm:p-10">
+          <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
+            <div class="lg:col-span-4">
+              <div class="flex items-center gap-4">
+                <div class="h-16 w-16 overflow-hidden rounded-full bg-surface">
+                  <img src="/assets/images/hero/me.png" alt="" class="h-full w-full object-cover" aria-hidden="true" />
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-textPrimary">Anyelo</p>
+                  <p class="text-xs text-textMuted">Construyendo soluciones con impacto real.</p>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <div class="grid gap-3 sm:grid-cols-2">
+                <div class="flex items-center gap-3">
+                  <span class="nav-pill">Email</span>
+                  <span class="text-sm text-textSecondary">tuemail@dominio.com</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span class="nav-pill">Ubicacion</span>
+                  <span class="text-sm text-textSecondary">Lima, Peru</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-3 lg:flex lg:justify-end">
+              <a class="btn-primary" href="https://wa.me/" rel="noopener" target="_blank">Hablemos por WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex items-center gap-3">
+              <img src="/assets/icons/mark.svg" alt="" class="h-8 w-8" aria-hidden="true" />
+              <p class="text-xs text-textMuted">© <span id="year"></span> Anyelo. Todos los derechos reservados.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <a class="btn-secondary h-11 w-11 px-0" href="https://www.linkedin.com/" aria-label="LinkedIn" rel="noopener" target="_blank">
+                <span class="sr-only">LinkedIn</span>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 10v10M7 7v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M11 10v10M11 13c.7-1.6 2.1-2.4 3.6-2.4C17.5 10.6 19 12.1 19 15v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </a>
+              <a class="btn-secondary h-11 w-11 px-0" href="https://github.com/" aria-label="GitHub" rel="noopener" target="_blank">
+                <span class="sr-only">GitHub</span>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M9 19c-4 1.5-4-2-5-2m10 4v-3c0-1 .2-1.5-.5-2.5 2 0 4-.2 5-1.5 1-1.4 1-4 0-5.5-.3-.4-.5-1.2 0-2.5 0 0-1 0-2.5 1-1-.3-2-.5-3-.5s-2 .2-3 .5C9 4.3 8 4.3 8 4.3c.5 1.3.3 2.1 0 2.5-1 1.5-1 4.1 0 5.5 1 1.3 3 1.5 5 1.5-.3.4-.5 1-.5 2v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a class="btn-secondary h-11 w-11 px-0" href="https://www.instagram.com/" aria-label="Instagram" rel="noopener" target="_blank">
+                <span class="sr-only">Instagram</span>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="2" />
+                  <path d="M16 6h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" stroke="currentColor" stroke-width="2" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

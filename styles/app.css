@@ -1,0 +1,117 @@
+@import "./base/tokens.css";
+@import "./base/prose.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-textPrimary antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  /* Section-level light surfaces to match reference (dark hero -> light editorial blocks). */
+  .theme-light {
+    color-scheme: light;
+    --color-background: 248 250 252;
+    --color-surface: 255 255 255;
+    --color-surface-alt: 245 247 251;
+    --color-card: 255 255 255;
+    --color-border: 226 232 240;
+    --color-primary: 15 23 42;
+    --color-secondary: 51 65 85;
+    --color-text-primary: 15 23 42;
+    --color-text-secondary: 71 85 105;
+    --color-text-muted: 100 116 139;
+    --shadow-soft: 0 10px 30px rgba(2,6,23,0.06);
+    --shadow-medium: 0 18px 50px rgba(2,6,23,0.10);
+    --shadow-large: 0 30px 90px rgba(2,6,23,0.12);
+  }
+}
+
+@layer components {
+  .border-default {
+    @apply border border-border/70;
+  }
+
+  .section-shell {
+    @apply relative mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-medium tracking-[0.22em] uppercase text-textMuted;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-semibold text-textPrimary;
+  }
+
+  .premium-card {
+    @apply bg-card/80 border-default rounded-xl shadow-soft backdrop-blur;
+  }
+
+  .premium-card-solid {
+    @apply bg-card border-default rounded-2xl shadow-soft;
+  }
+
+  .hero-shell {
+    @apply relative overflow-hidden;
+    background:
+      radial-gradient(1200px 600px at 75% 15%, rgb(var(--color-accent) / 0.14), transparent 55%),
+      radial-gradient(900px 500px at 15% 30%, rgb(125 211 252 / 0.10), transparent 60%),
+      linear-gradient(180deg, rgb(var(--color-background)) 0%, rgb(var(--color-background)) 60%, rgb(15 23 42 / 0) 100%);
+  }
+
+  .hero-photo-frame {
+    @apply relative overflow-hidden rounded-2xl;
+    background:
+      radial-gradient(600px 300px at 65% 20%, rgb(255 255 255 / 0.12), transparent 60%),
+      radial-gradient(700px 360px at 35% 85%, rgb(var(--color-accent) / 0.14), transparent 62%),
+      linear-gradient(180deg, rgb(2 6 23 / 0.18), rgb(2 6 23 / 0));
+  }
+
+  .hero-photo-ambient {
+    @apply pointer-events-none absolute -inset-10 rounded-full blur-3xl;
+    background: radial-gradient(circle at 55% 45%, rgb(var(--color-accent) / 0.22), transparent 55%);
+  }
+
+  .soft-divider {
+    @apply border-t;
+    border-color: rgb(var(--color-border) / 0.7);
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition duration-300;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-background shadow-soft hover:shadow-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50;
+  }
+
+  .btn-secondary {
+    @apply btn bg-surface border-default text-textPrimary hover:bg-surfaceAlt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50;
+  }
+
+  .input-shell {
+    @apply w-full rounded-lg border-default bg-surface/70 px-4 py-3 text-sm text-textPrimary placeholder:text-textMuted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50;
+  }
+
+  .metric-card {
+    @apply premium-card px-4 py-3;
+  }
+
+  .nav-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/60 px-3 py-1 text-xs text-textSecondary;
+  }
+}
