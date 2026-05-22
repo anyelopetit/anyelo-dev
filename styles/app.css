@@ -127,10 +127,113 @@
 
   .hero-photo-frame {
     @apply relative overflow-hidden rounded-2xl;
+    /* Feather the frame edges so it blends into the page. */
+    -webkit-mask-image: radial-gradient(
+      120% 110% at 52% 46%,
+      rgba(0, 0, 0, 1) 52%,
+      rgba(0, 0, 0, 0.95) 64%,
+      rgba(0, 0, 0, 0.72) 76%,
+      rgba(0, 0, 0, 0.36) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    mask-image: radial-gradient(
+      120% 110% at 52% 46%,
+      rgba(0, 0, 0, 1) 52%,
+      rgba(0, 0, 0, 0.95) 64%,
+      rgba(0, 0, 0, 0.72) 76%,
+      rgba(0, 0, 0, 0.36) 90%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .hero-photo-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url("/assets/images/hero/hero-bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.04);
+    filter: blur(0.5px);
+  }
+
+  /* Spotlight sits over bg, under portrait. */
+  .hero-photo-spotlight {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 180ms ease;
+    /* "Flashlight" that reveals the bg by lifting exposure. */
     background:
-      radial-gradient(600px 300px at 65% 20%, rgb(255 255 255 / 0.12), transparent 60%),
-      radial-gradient(700px 360px at 35% 85%, rgb(var(--color-accent) / 0.14), transparent 62%),
-      linear-gradient(180deg, rgb(2 6 23 / 0.18), rgb(2 6 23 / 0));
+      radial-gradient(
+        240px circle at var(--mx, 50%) var(--my, 45%),
+        rgb(255 220 150 / 0.28),
+        rgb(255 220 150 / 0.14) 26%,
+        rgb(var(--color-accent) / 0.10) 44%,
+        transparent 64%
+      );
+    mix-blend-mode: screen;
+  }
+
+  .hero-photo-frame:hover .hero-photo-spotlight {
+    opacity: 1;
+  }
+
+  /* Dark mask only for the bg (does not cover the portrait). */
+  .hero-photo-mask {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      radial-gradient(60% 50% at 52% 38%, rgb(0 0 0 / 0.08), transparent 65%),
+      radial-gradient(90% 70% at 50% 88%, rgb(0 0 0 / 0.34), transparent 70%),
+      linear-gradient(180deg, rgb(0 0 0 / 0.22), rgb(0 0 0 / 0.58));
+  }
+
+  /* Portrait fade should go to black (not transparent). */
+  .hero-portrait-fade {
+    position: relative;
+  }
+
+  .hero-portrait-fade::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* Start darkening from ~80% height and end in near-black. */
+    background: linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 0) 0%,
+      rgb(0 0 0 / 0) 76%,
+      rgb(0 0 0 / 0.22) 84%,
+      rgb(0 0 0 / 0.58) 92%,
+      rgb(0 0 0 / 0.92) 100%
+    );
+  }
+
+  @media (max-width: 767px) {
+    /* Mobile app-like overlap: text sits on lower half of portrait. */
+    .hero-media-mobile {
+      margin-bottom: -7.5rem;
+    }
+
+    .hero-copy-mobile {
+      position: relative;
+      z-index: 30;
+    }
+
+    .hero-copy-mobile {
+      background: rgb(2 6 23 / 0.45);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgb(255 255 255 / 0.06);
+      border-radius: 1.25rem;
+      padding: 1rem;
+    }
   }
 
   .hero-photo-ambient {
@@ -141,6 +244,40 @@
   .soft-divider {
     @apply border-t;
     border-color: rgb(var(--color-border) / 0.7);
+  }
+
+  /* Hero typing: prevent layout shift by reserving width for the longest phrase. */
+  .typing-wrap {
+    display: inline-flex;
+    align-items: baseline;
+    min-width: 30ch;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .typing-wrap {
+      min-width: 24ch;
+    }
+  }
+
+  .typing-text {
+    display: inline-block;
+  }
+
+  .typing-cursor {
+    display: inline-block;
+    width: 0.25ch;
+    height: 1em;
+    margin-left: 0.15ch;
+    background: currentColor;
+    transform: translateY(0.12em);
+    opacity: 0.9;
+    animation: cursorBlink 1.05s steps(1, end) infinite;
+  }
+
+  @keyframes cursorBlink {
+    0%, 48% { opacity: 0.95; }
+    52%, 100% { opacity: 0.1; }
   }
 
   .btn {

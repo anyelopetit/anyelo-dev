@@ -62,6 +62,7 @@ function initSpotlight(el) {
     if (!raf) raf = requestAnimationFrame(render);
   }
 
+  // Use pointer events only on the spotlight layer.
   el.addEventListener("pointermove", onMove, { passive: true });
 }
 
