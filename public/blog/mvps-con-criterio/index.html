@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>De 0 a 1: MVPs con criterio | Anyelo</title>
+    <meta name="description" content="Guia practica para definir, construir y entregar MVPs que reducen riesgo: problema, usuario, valor y camino tecnico." />
+    <link rel="canonical" href="https://anyelo.dev/blog/mvps-con-criterio/" />
+    <meta property="og:title" content="De 0 a 1: MVPs con criterio" />
+    <meta property="og:description" content="Guia practica para definir, construir y entregar MVPs que reducen riesgo: problema, usuario, valor y camino tecnico." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://anyelo.dev/blog/mvps-con-criterio/" />
+    <meta property="og:image" content="https://anyelo.dev/assets/images/blog/001-mvps.png" />
+    <meta property="og:image:alt" content="Banner del articulo: De 0 a 1, MVPs con criterio" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="De 0 a 1: MVPs con criterio" />
+    <meta name="twitter:description" content="Guia practica para definir, construir y entregar MVPs que reducen riesgo: problema, usuario, valor y camino tecnico." />
+    <meta name="twitter:image" content="https://anyelo.dev/assets/images/blog/001-mvps.png" />
+    <link rel="stylesheet" href="/assets/app.css" />
+    <script type="module" src="/assets/app.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "De 0 a 1: MVPs con criterio",
+        "description": "Guia practica para definir, construir y entregar MVPs que reducen riesgo: problema, usuario, valor y camino tecnico.",
+        "image": ["https://anyelo.dev/assets/images/blog/001-mvps.png"],
+        "datePublished": "2026-05-21",
+        "dateModified": "2026-05-21",
+        "inLanguage": "es",
+        "url": "https://anyelo.dev/blog/mvps-con-criterio/",
+        "author": {
+          "@type": "Person",
+          "name": "Anyelo",
+          "url": "https://anyelo.dev/",
+          "sameAs": ["https://www.linkedin.com/in/anyelopetit"]
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Anyelo",
+          "url": "https://anyelo.dev/"
+        },
+        "mainEntityOfPage": "https://anyelo.dev/blog/mvps-con-criterio/"
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://anyelo.dev/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://anyelo.dev/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "MVPs con criterio", "item": "https://anyelo.dev/blog/mvps-con-criterio/" }
+        ]
+      }
+    </script>
+  </head>
+  <body data-reading-enabled="true">
+    <div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar" data-reading-progress></div></div>
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+    <main id="main-content" class="pt-28" tabindex="-1">
+      <article class="section-shell py-14">
+        <p class="section-eyebrow">MVP</p>
+        <h1 class="text-4xl sm:text-5xl font-semibold text-textPrimary mt-3 max-w-[22ch]">De 0 a 1: MVPs con criterio</h1>
+        <p class="mt-4 text-textSecondary max-w-prose leading-relaxed">
+          Un MVP no es "hacerlo r&aacute;pido". Es reducir riesgo: validar el problema, el usuario, el valor y el camino t&eacute;cnico.
+          Si al final del MVP no sabes <span class="font-medium">qu&eacute; aprendiste</span>, entonces no era un MVP: era trabajo sin direcci&oacute;n.
+        </p>
+
+        <div class="post-meta">
+          <span><time datetime="2026-05-21">2026-05-21</time></span>
+          <span aria-hidden="true">&middot;</span>
+          <span>Lectura: 8 min</span>
+          <span aria-hidden="true">&middot;</span>
+          <a class="text-accent underline underline-offset-4" href="/blog/">Ver todos los posts</a>
+        </div>
+
+        <figure class="mt-8 overflow-hidden rounded-2xl border border-border/70 bg-surface/40 shadow-soft">
+          <img
+            src="/assets/images/blog/001-mvps.png"
+            alt="Banner del articulo: De 0 a 1, MVPs con criterio"
+            class="block w-full h-auto"
+            width="1536"
+            height="1024"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </figure>
+
+        <section class="post-summary" aria-label="Resumen">
+          <h2>TL;DR</h2>
+          <ul>
+            <li>Un MVP no es una demo: es un flujo usable que valida una hipótesis.</li>
+            <li>Recorta alcance, no fundamentos: accesibilidad, seguridad y medición mínima importan desde el día 1.</li>
+            <li>Si no hay aprendizaje medible, no fue MVP.</li>
+          </ul>
+        </section>
+
+        <nav class="post-toc" aria-label="Tabla de contenido" data-toc>
+          <h2>Tabla de contenido</h2>
+          <ol class="mt-3 grid gap-2">
+            <li><a href="#mvp-que-es" data-toc-link>¿Qué es un MVP (y qué no)?</a></li>
+            <li><a href="#mvp-riesgo" data-toc-link>Reducir riesgo</a></li>
+            <li><a href="#mvp-resultado" data-toc-link>Define el resultado</a></li>
+            <li><a href="#mvp-recorta" data-toc-link>Recorta sin romper</a></li>
+            <li><a href="#mvp-flujo" data-toc-link>Flujo crítico</a></li>
+            <li><a href="#mvp-instrumenta" data-toc-link>Instrumentación</a></li>
+            <li><a href="#mvp-errores" data-toc-link>Errores comunes</a></li>
+            <li><a href="#mvp-checklist" data-toc-link>Checklist final</a></li>
+            <li><a href="#mvp-cierre" data-toc-link>Cierre</a></li>
+          </ol>
+        </nav>
+
+        <div class="mt-10 prose prose-invert max-w-prose">
+          <h2 id="mvp-que-es">1. ¿Qué es un MVP (y qué no)?</h2>
+          <p>
+            MVP significa <span class="font-medium">Minimum Viable Product</span>. "Mínimo" no es mediocre: es lo mínimo que necesitas para entregar valor y aprender.
+            "Viable" significa usable por alguien real, no una demo. "Producto" implica que hay un flujo completo.
+          </p>
+          <ul>
+            <li><span class="font-medium">No es</span>: un prototipo bonito, un Figma, un landing sin entrega, un "beta" eterno.</li>
+            <li><span class="font-medium">Sí es</span>: un primer flujo end-to-end que valida una hipótesis.</li>
+          </ul>
+
+          <h2 id="mvp-riesgo">2. El objetivo real: reducir riesgo</h2>
+          <p>
+            Un MVP funciona cuando reduce incertidumbre de forma concreta.
+            Estos son los riesgos típicos que quieres atacar, en orden:
+          </p>
+          <ol>
+            <li><span class="font-medium">Riesgo de problema</span>: ¿esto duele lo suficiente como para que alguien cambie su comportamiento?</li>
+            <li><span class="font-medium">Riesgo de usuario</span>: ¿a quién exactamente le duele y cuándo?</li>
+            <li><span class="font-medium">Riesgo de valor</span>: ¿qué propuesta hace que lo elijan?</li>
+            <li><span class="font-medium">Riesgo de canal</span>: ¿cómo llegan? ¿cuánto cuesta adquirirlos?</li>
+            <li><span class="font-medium">Riesgo técnico</span>: ¿podemos entregar el flujo core de forma estable?</li>
+          </ol>
+
+          <h2 id="mvp-resultado">3. Define el resultado antes de escribir c&oacute;digo</h2>
+          <p>
+            Un error com&uacute;n es empezar por features. Empieza por un resultado observable.
+          </p>
+          <h3>Plantilla r&aacute;pida</h3>
+          <pre><code>Cuando [tipo de usuario] haga [accion principal],
+entonces [resultado observable] en [tiempo],
+y nosotros medimos [metrica].</code></pre>
+
+          <h3>Ejemplo</h3>
+          <pre><code>Cuando un admin cree un pedido,
+entonces el cliente recibe confirmacion en menos de 30s,
+y medimos: % de pedidos completados y tiempo a primera entrega.</code></pre>
+
+          <h2 id="mvp-recorta">4. Recorta sin romper</h2>
+          <p>
+            Recorta alcance, no fundamentos. Hay cosas que <span class="font-medium">no</span> deberían caer en un MVP porque te explotan después:
+          </p>
+          <ul>
+            <li><span class="font-medium">Accesibilidad básica</span>: contraste, foco visible, formularios legibles.</li>
+            <li><span class="font-medium">Seguridad básica</span>: validación, auth mínima, no exponer datos sensibles.</li>
+            <li><span class="font-medium">Performance razonable</span>: no bloquear el flujo core con latencia evitable.</li>
+            <li><span class="font-medium">Observabilidad mínima</span>: logs claros y eventos para medir lo importante.</li>
+          </ul>
+
+          <h3>Qué sí recortar</h3>
+          <ul>
+            <li>Roles y permisos avanzados (deja uno o dos roles).</li>
+            <li>Configuraciones complejas (hardcodea al inicio si no cambia la validación).</li>
+            <li>Edge cases raros (documenta, pero no los construyas todos el día 1).</li>
+            <li>Escalabilidad premium (pero deja el camino listo: no hagas deuda irreversible).</li>
+          </ul>
+
+          <h2 id="mvp-flujo">5. Diseña el flujo crítico (end-to-end)</h2>
+          <p>
+            Un MVP se rompe cuando intentas validar 10 cosas al mismo tiempo. Elige <span class="font-medium">un</span> flujo.
+          </p>
+          <h3>Checklist de flujo</h3>
+          <ul>
+            <li>Entrada: ¿cómo llega el usuario?</li>
+            <li>Acción: ¿cuál es el paso principal?</li>
+            <li>Salida: ¿qué recibe como confirmación?</li>
+            <li>Recuperación: ¿qué pasa si falla?</li>
+          </ul>
+
+          <h2 id="mvp-instrumenta">6. Instrumenta lo m&iacute;nimo para aprender</h2>
+          <p>
+            Si no lo mides, no lo validas. No necesitas 40 eventos: necesitas 5 bien elegidos.
+          </p>
+          <ul>
+            <li><span class="font-medium">Activation</span>: el usuario completó el flujo core.</li>
+            <li><span class="font-medium">Time-to-value</span>: cuánto tardó en llegar al resultado.</li>
+            <li><span class="font-medium">Drop-off</span>: dónde se cae.</li>
+            <li><span class="font-medium">Retention</span>: vuelve y repite el flujo.</li>
+            <li><span class="font-medium">Qualitative</span>: 3-5 entrevistas cortas valen oro.</li>
+          </ul>
+
+          <h2 id="mvp-errores">7. Errores comunes (y cómo evitarlos)</h2>
+          <ul>
+            <li><span class="font-medium">MVP = features</span>: terminas construyendo un Frankenstein sin aprendizaje.</li>
+            <li><span class="font-medium">Lanzar sin canal</span>: nadie lo usa y concluyes mal.</li>
+            <li><span class="font-medium">Sin dueño</span>: nadie responde por métricas ni iteración.</li>
+            <li><span class="font-medium">Deuda irreversible</span>: hacks que luego impiden crecer.</li>
+          </ul>
+
+          <h2 id="mvp-checklist">8. Checklist final: MVP con criterio</h2>
+          <ul>
+            <li>Definí una hipótesis clara y una métrica.</li>
+            <li>Elegí un flujo core end-to-end.</li>
+            <li>Recorté features, no calidad base.</li>
+            <li>Instrumenté lo mínimo para aprender.</li>
+            <li>Planifiqué la primera iteración post-lanzamiento.</li>
+          </ul>
+
+          <h2 id="mvp-cierre">Cierre</h2>
+          <p>
+            Un buen MVP te deja una respuesta. Aunque sea "no". Lo importante es que te ahorre meses de construcción sin dirección.
+          </p>
+        </div>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">
+            <p class="text-xs text-textMuted">Navegación</p>
+            <p class="mt-2 text-sm font-semibold text-textPrimary">Volver al blog</p>
+          </a>
+          <a href="/blog/que-es-markdown/">
+            <p class="text-xs text-textMuted">Siguiente lectura</p>
+            <p class="mt-2 text-sm font-semibold text-textPrimary">¿Qué es Markdown? Guía práctica</p>
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <div class="reading-ui" data-reading-ui>
+      <button
+        class="btn-secondary reading-button"
+        type="button"
+        data-reading-button
+        aria-controls="reading-panel"
+        aria-expanded="false"
+        aria-label="Preferencias de lectura"
+      >
+        Aa
+      </button>
+
+      <section id="reading-panel" class="reading-panel premium-card-solid" data-reading-panel hidden aria-label="Preferencias de lectura">
+        <header>
+          <h2>Lectura</h2>
+          <button class="btn-secondary h-11 w-11 px-0" type="button" data-reading-close aria-label="Cerrar">&times;</button>
+        </header>
+
+        <fieldset>
+          <legend>Tema</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-theme" value="dark" /> Oscuro</label>
+            <label class="reading-option"><input type="radio" name="reading-theme" value="light" /> Claro</label>
+            <label class="reading-option"><input type="radio" name="reading-theme" value="sepia" /> Sepia</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tamaño</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-size" value="sm" /> Pequeña</label>
+            <label class="reading-option"><input type="radio" name="reading-size" value="md" /> Mediana</label>
+            <label class="reading-option"><input type="radio" name="reading-size" value="lg" /> Grande</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Fuente</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-font" value="atkinson" /> Legible</label>
+            <label class="reading-option"><input type="radio" name="reading-font" value="roboto" /> Roboto</label>
+            <label class="reading-option"><input type="radio" name="reading-font" value="lato" /> Lato</label>
+            <label class="reading-option"><input type="radio" name="reading-font" value="space" /> Actual</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Ancho</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-width" value="compact" /> Compacto</label>
+            <label class="reading-option"><input type="radio" name="reading-width" value="comfortable" /> C&oacute;modo</label>
+            <label class="reading-option"><input type="radio" name="reading-width" value="wide" /> Amplio</label>
+          </div>
+        </fieldset>
+      </section>
+    </div>
+  </body>
+</html>

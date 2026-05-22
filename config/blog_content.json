@@ -1,11 +1,18 @@
 {
   "posts": [
     {
-      "slug": "primer-post",
+      "slug": "mvps-con-criterio",
       "title": "De 0 a 1: MVPs con criterio",
       "date": "2026-05-21",
       "readingTime": "4 min",
       "excerpt": "Como reducir riesgo y acelerar iteracion."
+    },
+    {
+      "slug": "que-es-markdown",
+      "title": "¿Qué es Markdown?",
+      "date": "2026-05-22",
+      "readingTime": "3 min",
+      "excerpt": "Guía rápida para entender y usar Markdown."
     }
   ]
 }

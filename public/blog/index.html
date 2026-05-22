@@ -3,25 +3,131 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog | Anyelo</title>
-    <meta name="description" content="Notas breves sobre arquitectura, automatizacion e IA aplicada." />
+    <title>Blog de producto, arquitectura e IA aplicada | Anyelo</title>
+    <meta name="description" content="Articulos practicos sobre producto, arquitectura de software, automatizacion e IA aplicada. Enfoque: construir, medir y mejorar." />
     <link rel="canonical" href="https://anyelo.dev/blog/" />
+
+    <meta property="og:title" content="Blog de producto, arquitectura e IA aplicada" />
+    <meta property="og:description" content="Articulos practicos sobre producto, arquitectura de software, automatizacion e IA aplicada." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://anyelo.dev/blog/" />
+    <meta property="og:image" content="https://anyelo.dev/assets/images/blog/001-mvps.png" />
+    <meta property="og:image:alt" content="Banner del blog" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog de producto, arquitectura e IA aplicada" />
+    <meta name="twitter:description" content="Articulos practicos sobre producto, arquitectura, automatizacion e IA aplicada." />
+    <meta name="twitter:image" content="https://anyelo.dev/assets/images/blog/001-mvps.png" />
     <link rel="stylesheet" href="/assets/app.css" />
     <script type="module" src="/assets/app.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog | Anyelo",
+        "url": "https://anyelo.dev/blog/",
+        "inLanguage": "es"
+      }
+    </script>
   </head>
-  <body>
-    <main class="pt-28">
+  <body data-reading-enabled="true">
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+    <main id="main-content" class="pt-28" tabindex="-1">
       <section class="section-shell py-14">
         <p class="section-eyebrow">BLOG</p>
-        <h1 class="section-title mt-3">Articulos</h1>
+        <h1 class="section-title mt-3">Art&iacute;culos pr&aacute;cticos</h1>
+        <p class="mt-4 text-textSecondary max-w-prose leading-relaxed">
+          Notas sin humo sobre producto, arquitectura, automatizaci&oacute;n e IA aplicada. Todo orientado a construir, medir y mejorar.
+        </p>
         <div class="mt-10 grid gap-4 md:grid-cols-2">
-          <a class="premium-card block p-6" href="/blog/primer-post/">
-            <h2 class="text-sm font-semibold text-textPrimary">De 0 a 1: MVPs con criterio</h2>
-            <p class="mt-2 text-sm text-textSecondary">Reducir riesgo, acelerar validacion y evitar re-trabajo.</p>
-            <p class="mt-4 text-xs text-textMuted">2026-05-21</p>
+          <a class="blog-card" href="/blog/que-es-markdown/">
+            <div class="blog-card-media">
+              <img src="/assets/images/blog/002-markdown.png" alt="Banner del articulo: Que es Markdown" loading="lazy" decoding="async" />
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <span class="nav-pill">Markdown</span>
+                <p class="text-xs text-textMuted"><time datetime="2026-05-22">2026-05-22</time> &middot; 6 min</p>
+              </div>
+              <h2 class="mt-3 text-lg font-semibold text-textPrimary">&iquest;Qu&eacute; es Markdown?</h2>
+              <p class="mt-2 text-sm text-textSecondary">Gu&iacute;a completa con sintaxis esencial, ejemplos reales y errores comunes.</p>
+            </div>
+          </a>
+          <a class="blog-card" href="/blog/mvps-con-criterio/">
+            <div class="blog-card-media">
+              <img src="/assets/images/blog/001-mvps.png" alt="Banner del articulo: MVPs con criterio" loading="lazy" decoding="async" />
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <span class="nav-pill">MVP</span>
+                <p class="text-xs text-textMuted"><time datetime="2026-05-21">2026-05-21</time> &middot; 8 min</p>
+              </div>
+              <h2 class="mt-3 text-lg font-semibold text-textPrimary">De 0 a 1: MVPs con criterio</h2>
+              <p class="mt-2 text-sm text-textSecondary">Reducir riesgo, validar hip&oacute;tesis y evitar construir de m&aacute;s demasiado pronto.</p>
+            </div>
           </a>
         </div>
       </section>
     </main>
+
+    <div class="reading-ui" data-reading-ui>
+      <button
+        class="btn-secondary reading-button"
+        type="button"
+        data-reading-button
+        aria-controls="reading-panel"
+        aria-expanded="false"
+        aria-label="Preferencias de lectura"
+      >
+        Aa
+      </button>
+
+      <section id="reading-panel" class="reading-panel premium-card-solid" data-reading-panel hidden aria-label="Preferencias de lectura">
+        <header>
+          <h2>Lectura</h2>
+          <button class="btn-secondary h-11 w-11 px-0" type="button" data-reading-close aria-label="Cerrar">
+            &times;
+          </button>
+        </header>
+
+        <fieldset>
+          <legend>Tema</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-theme" value="dark" /> Oscuro</label>
+            <label class="reading-option"><input type="radio" name="reading-theme" value="light" /> Claro</label>
+            <label class="reading-option"><input type="radio" name="reading-theme" value="sepia" /> Sepia</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tama&ntilde;o</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-size" value="sm" /> Peque&ntilde;a</label>
+            <label class="reading-option"><input type="radio" name="reading-size" value="md" /> Mediana</label>
+            <label class="reading-option"><input type="radio" name="reading-size" value="lg" /> Grande</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Fuente</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-font" value="atkinson" /> Legible</label>
+            <label class="reading-option"><input type="radio" name="reading-font" value="roboto" /> Roboto</label>
+            <label class="reading-option"><input type="radio" name="reading-font" value="lato" /> Lato</label>
+            <label class="reading-option"><input type="radio" name="reading-font" value="space" /> Actual</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Ancho</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-width" value="compact" /> Compacto</label>
+            <label class="reading-option"><input type="radio" name="reading-width" value="comfortable" /> C&oacute;modo</label>
+            <label class="reading-option"><input type="radio" name="reading-width" value="wide" /> Amplio</label>
+          </div>
+        </fieldset>
+      </section>
+    </div>
   </body>
 </html>

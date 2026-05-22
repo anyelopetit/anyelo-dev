@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>¿Qué es Markdown? Guía práctica | Anyelo</title>
+    <meta name="description" content="Guia practica y completa para entender Markdown, escribir mejor documentacion y dominar su sintaxis con ejemplos." />
+    <link rel="canonical" href="https://anyelo.dev/blog/que-es-markdown/" />
+    <meta property="og:title" content="¿Qué es Markdown? Guía práctica" />
+    <meta property="og:description" content="Guia practica y completa para entender Markdown, escribir mejor documentacion y dominar su sintaxis con ejemplos." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://anyelo.dev/blog/que-es-markdown/" />
+    <meta property="og:image" content="https://anyelo.dev/assets/images/blog/002-markdown.png" />
+    <meta property="og:image:alt" content="Ilustracion sobre Markdown con ejemplos de titulos, listas y vista previa" />
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="¿Qué es Markdown? Guía práctica" />
+    <meta name="twitter:description" content="Guia practica y completa para entender Markdown y dominar su sintaxis con ejemplos." />
+    <meta name="twitter:image" content="https://anyelo.dev/assets/images/blog/002-markdown.png" />
+    <link rel="stylesheet" href="/assets/app.css" />
+    <script type="module" src="/assets/app.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "\u00bfQu\u00e9 es Markdown? Gu\u00eda pr\u00e1ctica",
+        "description": "Guia practica y completa para entender Markdown, escribir mejor documentacion y dominar su sintaxis con ejemplos.",
+        "image": ["https://anyelo.dev/assets/images/blog/002-markdown.png"],
+        "datePublished": "2026-05-22",
+        "dateModified": "2026-05-22",
+        "inLanguage": "es",
+        "url": "https://anyelo.dev/blog/que-es-markdown/",
+        "author": {
+          "@type": "Person",
+          "name": "Anyelo",
+          "url": "https://anyelo.dev/",
+          "sameAs": ["https://www.linkedin.com/in/anyelopetit"]
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Anyelo",
+          "url": "https://anyelo.dev/"
+        },
+        "mainEntityOfPage": "https://anyelo.dev/blog/que-es-markdown/"
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://anyelo.dev/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://anyelo.dev/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Que es Markdown", "item": "https://anyelo.dev/blog/que-es-markdown/" }
+        ]
+      }
+    </script>
+  </head>
+  <body data-reading-enabled="true">
+    <div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar" data-reading-progress></div></div>
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+    <main id="main-content" class="pt-28" tabindex="-1">
+      <article class="section-shell py-14">
+        <p class="section-eyebrow">MARKDOWN</p>
+        <h1 class="text-4xl sm:text-5xl font-semibold text-textPrimary mt-3 max-w-[26ch]">¿Qué es Markdown? Guía práctica</h1>
+        <p class="mt-4 text-textSecondary max-w-prose leading-relaxed">
+          Markdown es una forma sencilla de escribir texto con formato usando solo caracteres. Si has visto un <span class="font-medium">README</span> en GitHub, probablemente ya lo usaste.
+          En esta guía te explico lo esencial, lo que la gente suele confundir y cómo usarlo en la vida real (docs, notas, blogs, producto y desarrollo).
+        </p>
+
+        <div class="post-meta">
+          <span><time datetime="2026-05-22">2026-05-22</time></span>
+          <span aria-hidden="true">&middot;</span>
+          <span>Lectura: 6 min</span>
+          <span aria-hidden="true">&middot;</span>
+          <a class="text-accent underline underline-offset-4" href="/blog/">Ver todos los posts</a>
+        </div>
+
+        <figure class="mt-8 overflow-hidden rounded-2xl border border-border/70 bg-surface/40 shadow-soft">
+          <img
+            src="/assets/images/blog/002-markdown.png"
+            alt="Ilustracion sobre Markdown con ejemplos de titulos, listas y vista previa"
+            class="block w-full h-auto"
+            width="1536"
+            height="1024"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </figure>
+
+        <section class="post-summary" aria-label="Resumen">
+          <h2>TL;DR</h2>
+          <ul>
+            <li>Markdown es texto plano con estructura: headings, listas, links y código.</li>
+            <li>Es portable, rápido y perfecto para docs y trabajo en equipo.</li>
+            <li>Si dominas headings + listas + bloques de código, ya estás en el 80%.</li>
+          </ul>
+        </section>
+
+        <nav class="post-toc" aria-label="Tabla de contenido" data-toc>
+          <h2>Tabla de contenido</h2>
+          <ol class="mt-3 grid gap-2">
+            <li><a href="#markdown-que-es" data-toc-link>¿Qué es Markdown (y qué no)?</a></li>
+            <li><a href="#markdown-por-que" data-toc-link>¿Por qué sigue siendo útil?</a></li>
+            <li><a href="#markdown-sintaxis" data-toc-link>Sintaxis esencial</a></li>
+            <li><a href="#markdown-casos-uso" data-toc-link>Casos de uso reales</a></li>
+            <li><a href="#markdown-errores" data-toc-link>Errores comunes</a></li>
+            <li><a href="#markdown-flujo" data-toc-link>Flujo recomendado</a></li>
+            <li><a href="#markdown-herramientas" data-toc-link>Herramientas</a></li>
+            <li><a href="#markdown-faq" data-toc-link>Preguntas frecuentes</a></li>
+            <li><a href="#markdown-cierre" data-toc-link>Cierre</a></li>
+          </ol>
+        </nav>
+
+        <div class="mt-10 prose prose-invert max-w-prose">
+          <h2 id="markdown-que-es">1. ¿Qué es Markdown (y qué no)?</h2>
+          <p>
+            Markdown es un lenguaje de marcado ligero. Su objetivo no es "diseñar" sino <span class="font-medium">estructurar</span>: títulos, listas, links, código, citas.
+            Luego una herramienta (GitHub, un editor, un generador de sitio) lo convierte a HTML u otro formato.
+          </p>
+          <p>
+            No es un reemplazo de Figma, ni un sistema de estilos. Tampoco es un estándar único: existen variantes (CommonMark, GitHub Flavored Markdown, Markdown Extra).
+            A nivel práctico: si escribes para web, GitHub o notas, casi siempre te basta con la sintaxis "común" + dos o tres extras.
+          </p>
+
+          <h2 id="markdown-por-que">2. Por qué sigue siendo tan útil</h2>
+          <ul>
+            <li><span class="font-medium">Portable</span>: es texto plano. Vive bien en git, en un ticket, en una wiki o en un repo.</li>
+            <li><span class="font-medium">Rápido</span>: escribes sin pelearte con toolbars o estilos.</li>
+            <li><span class="font-medium">Legible</span>: incluso sin renderizar, se entiende.</li>
+            <li><span class="font-medium">Automatizable</span>: se transforma a HTML/PDF, se valida, se versiona, se revisa en PRs.</li>
+            <li><span class="font-medium">IA-friendly</span>: es una estructura clara para prompts, especificaciones y documentación.</li>
+          </ul>
+
+          <h2 id="markdown-sintaxis">3. Sintaxis esencial con ejemplos</h2>
+
+          <h3>Títulos</h3>
+          <pre><code># Titulo principal
+## Seccion
+### Sub-seccion</code></pre>
+
+          <h3>Énfasis</h3>
+          <pre><code>**negrita**
+*cursiva*
+`codigo inline`</code></pre>
+
+          <h3>Listas</h3>
+          <pre><code>- Item
+- Item
+  - Subitem
+
+1. Paso uno
+2. Paso dos</code></pre>
+
+          <h3>Links e imágenes</h3>
+          <pre><code>[Texto del link](https://example.com)
+
+![Alt de la imagen](/ruta/imagen.png)</code></pre>
+
+          <h3>Citas</h3>
+          <pre><code>&gt; Una cita corta.
+&gt;
+&gt; Puede tener varias lineas.</code></pre>
+
+          <h3>Bloques de código</h3>
+          <p>
+            Los bloques de código son clave para documentar APIs, comandos, pasos y ejemplos.
+            Muchos renderizadores soportan un "lenguaje" para resaltar sintaxis.
+          </p>
+          <pre><code>```bash
+npm run build
+```
+
+```ruby
+class User &lt; ApplicationRecord
+end
+```</code></pre>
+
+          <h2 id="markdown-casos-uso">4. Casos de uso reales (no teóricos)</h2>
+          <h3>README de un proyecto</h3>
+          <ul>
+            <li>Qué hace el proyecto</li>
+            <li>Requisitos</li>
+            <li>Instalación / Setup</li>
+            <li>Comandos frecuentes</li>
+            <li>Decisiones técnicas</li>
+          </ul>
+
+          <h3>Especificaciones rápidas</h3>
+          <p>
+            Markdown es excelente para escribir una spec que puedas revisar en PR:
+            alcance, casos, edge cases, criterios de aceptación, riesgos.
+            Si estás definiendo el alcance de un producto, esto se complementa bien con un enfoque de
+            <a href="/blog/mvps-con-criterio/">MVP con criterio</a>.
+          </p>
+
+          <h3>Notas de arquitectura</h3>
+          <p>
+            Para ADRs o notas t&eacute;cnicas, Markdown te da estructura sin fricci&oacute;n.
+            Lo importante es la claridad, no el formato.
+          </p>
+
+          <h2 id="markdown-errores">5. Errores comunes</h2>
+          <ul>
+            <li><span class="font-medium">Usar Markdown como si fuera diseño</span>: intentar controlar pixeles, fuentes o layout fino.</li>
+            <li><span class="font-medium">Estructura pobre</span>: no usar headings, hacer todo en párrafos largos.</li>
+            <li><span class="font-medium">Links sin contexto</span>: "haz click aquí" en lugar de texto descriptivo.</li>
+            <li><span class="font-medium">Mezclar HTML innecesario</span>: solo cuando el renderizador lo requiera.</li>
+          </ul>
+
+          <h2 id="markdown-flujo">6. Flujo práctico recomendado</h2>
+          <ol>
+            <li>Escribe el contenido primero (títulos + bullets).</li>
+            <li>Ordena: de lo general a lo específico.</li>
+            <li>Agrega ejemplos cortos y copiables.</li>
+            <li>Pasa un corrector ortográfico, y luego revisa consistencia de headings.</li>
+          </ol>
+
+          <h2 id="markdown-herramientas">7. Herramientas que valen la pena</h2>
+          <ul>
+            <li><span class="font-medium">GitHub</span>: issues/PRs/README.</li>
+            <li><span class="font-medium">VS Code</span>: extensiones + preview.</li>
+            <li><span class="font-medium">Obsidian</span>: notas y conocimiento personal.</li>
+            <li><span class="font-medium">Notion</span>: &uacute;til, pero ojo con export/portabilidad.</li>
+          </ul>
+
+          <h2 id="markdown-faq">Preguntas frecuentes</h2>
+          <h3>¿Markdown es un lenguaje de programación?</h3>
+          <p>No. Es un formato de texto para estructurar contenido. No ejecuta lógica.</p>
+          <h3>¿Me sirve si no soy dev?</h3>
+          <p>Sí. Es ideal para notas, documentación, briefs y contenido que quieras versionar o compartir.</p>
+          <h3>¿Qué variante debo usar?</h3>
+          <p>Si escribes para GitHub, usa GitHub Flavored Markdown. Para el resto, CommonMark suele ser suficiente.</p>
+
+          <h2 id="markdown-cierre">Cierre</h2>
+          <p>
+            Si solo aprendes tres cosas hoy: usa headings, usa listas, y usa bloques de código.
+            Eso solo ya hace tu documentación más clara, revisable y mantenible.
+          </p>
+        </div>
+
+        <aside class="premium-card-solid mt-10 p-6" aria-label="Autor">
+          <p class="text-xs text-textMuted">Escrito por</p>
+          <p class="mt-2 text-sm font-semibold text-textPrimary">Anyelo Petit</p>
+          <p class="mt-2 text-sm text-textSecondary">Senior Software Engineer. Rails, producto e IA aplicada.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <a class="btn-secondary h-11" href="https://www.linkedin.com/in/anyelopetit" rel="noopener" target="_blank">LinkedIn</a>
+            <a class="btn-secondary h-11" href="/" >Inicio</a>
+          </div>
+        </aside>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">
+            <p class="text-xs text-textMuted">Navegación</p>
+            <p class="mt-2 text-sm font-semibold text-textPrimary">Volver al blog</p>
+          </a>
+          <a href="/blog/mvps-con-criterio/">
+            <p class="text-xs text-textMuted">Siguiente lectura</p>
+            <p class="mt-2 text-sm font-semibold text-textPrimary">De 0 a 1: MVPs con criterio</p>
+          </a>
+        </div>
+      </article>
+    </main>
+
+    <div class="reading-ui" data-reading-ui>
+      <button
+        class="btn-secondary reading-button"
+        type="button"
+        data-reading-button
+        aria-controls="reading-panel"
+        aria-expanded="false"
+        aria-label="Preferencias de lectura"
+      >
+        Aa
+      </button>
+
+      <section id="reading-panel" class="reading-panel premium-card-solid" data-reading-panel hidden aria-label="Preferencias de lectura">
+        <header>
+          <h2>Lectura</h2>
+          <button class="btn-secondary h-11 w-11 px-0" type="button" data-reading-close aria-label="Cerrar">&times;</button>
+        </header>
+
+        <fieldset>
+          <legend>Tema</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-theme" value="dark" /> Oscuro</label>
+            <label class="reading-option"><input type="radio" name="reading-theme" value="light" /> Claro</label>
+            <label class="reading-option"><input type="radio" name="reading-theme" value="sepia" /> Sepia</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tamaño</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-size" value="sm" /> Pequeña</label>
+            <label class="reading-option"><input type="radio" name="reading-size" value="md" /> Mediana</label>
+            <label class="reading-option"><input type="radio" name="reading-size" value="lg" /> Grande</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Fuente</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-font" value="atkinson" /> Legible</label>
+            <label class="reading-option"><input type="radio" name="reading-font" value="roboto" /> Roboto</label>
+            <label class="reading-option"><input type="radio" name="reading-font" value="lato" /> Lato</label>
+            <label class="reading-option"><input type="radio" name="reading-font" value="space" /> Actual</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Ancho</legend>
+          <div class="reading-options">
+            <label class="reading-option"><input type="radio" name="reading-width" value="compact" /> Compacto</label>
+            <label class="reading-option"><input type="radio" name="reading-width" value="comfortable" /> Cómodo</label>
+            <label class="reading-option"><input type="radio" name="reading-width" value="wide" /> Amplio</label>
+          </div>
+        </fieldset>
+      </section>
+    </div>
+  </body>
+</html>
