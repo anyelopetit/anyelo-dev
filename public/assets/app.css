@@ -806,9 +806,17 @@ h1, h2, h3 {
 
 .hero-photo-frame {
   position: relative;
+  overflow: visible;
+}
+
+/* Stage clips the background so the portrait can pop out above (3D feel). */
+
+.hero-photo-stage {
+  position: relative;
   overflow: hidden;
-  border-radius: var(--radius-2xl);
-  /* Feather the frame edges so it blends into the page. */
+  border-radius: 1.25rem;
+  min-height: 520px;
+  /* Feather the stage edges so it blends into the page. */
   -webkit-mask-image: radial-gradient(
       120% 110% at 52% 46%,
       rgba(0, 0, 0, 1) 52%,
@@ -825,6 +833,12 @@ h1, h2, h3 {
       rgba(0, 0, 0, 0.36) 90%,
       rgba(0, 0, 0, 0) 100%
     );
+}
+
+@media (max-width: 767px) {
+  .hero-photo-stage {
+    min-height: 440px;
+  }
 }
 
 .hero-photo-bg {
@@ -899,8 +913,45 @@ h1, h2, h3 {
     );
 }
 
+/* Slightly larger portrait anchored to the bottom, peeking above the stage. */
+
+.hero-portrait-3d {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  max-width: none;
+  transform-origin: bottom center;
+  pointer-events: none;
+}
+
 @media (max-width: 767px) {
-  /* Mobile app-like overlap: text sits on lower half of portrait. */
+  .hero-portrait-3d {
+    /* Keep stable positioning on mobile. */
+  }
+}
+
+/* Crop left/right internally without distorting the square PNG. */
+
+.hero-portrait-crop {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-portrait-crop img {
+  width: 100%;
+  min-width: 450px;
+  max-width: 550px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Copy overlap styling for mobile + tablet (below lg). */
+
+@media (max-width: 1023px) {
+  /* Mobile app-like overlap: copy sits on top of portrait. */
 
   .hero-media-mobile {
     margin-bottom: -7.5rem;
@@ -909,12 +960,34 @@ h1, h2, h3 {
   .hero-copy-mobile {
     position: relative;
     z-index: 30;
-    background: rgb(2 6 23 / 0.45);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgb(255 255 255 / 0.06);
+    background: linear-gradient(to bottom, rgb(2 6 23 / 0) 0%, rgb(2 6 23 / 0.90) 20%);
     border-radius: 1.25rem;
     padding: 1rem;
+  }
+}
+
+/* Tablet range: keep composition but prevent copy/image collision. */
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-photo-stage {
+    min-height: 460px;
+  }
+
+  .hero-portrait-3d {
+    /* Reduce the amount of portrait that pops out above the stage. */
+    transform: translateY(10px);
+  }
+
+  .hero-portrait-fade::after {
+    /* Softer fade so it doesn't visually wash over the copy on tablet. */
+    background: linear-gradient(
+        to bottom,
+        rgb(0 0 0 / 0) 0%,
+        rgb(0 0 0 / 0) 82%,
+        rgb(0 0 0 / 0.18) 88%,
+        rgb(0 0 0 / 0.50) 94%,
+        rgb(0 0 0 / 0.85) 100%
+      );
   }
 }
 
@@ -938,14 +1011,7 @@ h1, h2, h3 {
 .typing-wrap {
   display: inline-flex;
   align-items: baseline;
-  min-width: 30ch;
   white-space: nowrap;
-}
-
-@media (max-width: 640px) {
-  .typing-wrap {
-    min-width: 24ch;
-  }
 }
 
 .typing-text {
@@ -1198,10 +1264,6 @@ h1, h2, h3 {
   top: 1rem;
 }
 
-.z-20 {
-  z-index: 20;
-}
-
 .z-50 {
   z-index: 50;
 }
@@ -1221,6 +1283,10 @@ h1, h2, h3 {
 
 .mb-5 {
   margin-bottom: 1.25rem;
+}
+
+.mb-\[-200px\] {
+  margin-bottom: -200px;
 }
 
 .mt-1 {
@@ -1368,12 +1434,13 @@ h1, h2, h3 {
   max-width: 22ch;
 }
 
-.max-w-\[560px\] {
-  max-width: 560px;
-}
-
 .max-w-prose {
   max-width: 65ch;
+}
+
+.-translate-y-40 {
+  --tw-translate-y: -10rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .scale-110 {
@@ -1432,6 +1499,10 @@ h1, h2, h3 {
   gap: 2.5rem;
 }
 
+.gap-12 {
+  gap: 3rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1454,10 +1525,6 @@ h1, h2, h3 {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-12 {
-  gap: 3rem;
 }
 
 .gap-x-10 {
@@ -1515,6 +1582,11 @@ h1, h2, h3 {
   background-color: rgb(var(--color-card) / 0.8);
 }
 
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(var(--color-primary) / var(--tw-bg-opacity, 1));
@@ -1540,11 +1612,6 @@ h1, h2, h3 {
 
 .bg-surface\/80 {
   background-color: rgb(var(--color-surface) / 0.8);
-}
-
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[url\(\'\/assets\/images\/og\/og-home\.png\'\)\] {
@@ -1868,10 +1935,6 @@ h1, h2, h3 {
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
-.backdrop-filter {
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2007,11 +2070,6 @@ h1, h2, h3 {
     line-height: 1;
   }
 
-  .sm\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
-  }
-
   .sm\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -2057,10 +2115,6 @@ h1, h2, h3 {
     grid-column: span 5 / span 5;
   }
 
-  .lg\:col-span-6 {
-    grid-column: span 6 / span 6;
-  }
-
   .lg\:col-span-7 {
     grid-column: span 7 / span 7;
   }
@@ -2069,8 +2123,17 @@ h1, h2, h3 {
     grid-column: span 8 / span 8;
   }
 
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .lg\:flex {
     display: flex;
+  }
+
+  .lg\:translate-y-0 {
+    --tw-translate-y: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .lg\:grid-cols-12 {

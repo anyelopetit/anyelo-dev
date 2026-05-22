@@ -126,8 +126,16 @@
   }
 
   .hero-photo-frame {
-    @apply relative overflow-hidden rounded-2xl;
-    /* Feather the frame edges so it blends into the page. */
+    @apply relative overflow-visible;
+  }
+
+  /* Stage clips the background so the portrait can pop out above (3D feel). */
+  .hero-photo-stage {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    min-height: 520px;
+    /* Feather the stage edges so it blends into the page. */
     -webkit-mask-image: radial-gradient(
       120% 110% at 52% 46%,
       rgba(0, 0, 0, 1) 52%,
@@ -144,6 +152,12 @@
       rgba(0, 0, 0, 0.36) 90%,
       rgba(0, 0, 0, 0) 100%
     );
+  }
+
+  @media (max-width: 767px) {
+    .hero-photo-stage {
+      min-height: 440px;
+    }
   }
 
   .hero-photo-bg {
@@ -215,8 +229,42 @@
     );
   }
 
+  /* Slightly larger portrait anchored to the bottom, peeking above the stage. */
+  .hero-portrait-3d {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    max-width: none;
+    transform-origin: bottom center;
+    pointer-events: none;
+  }
+
   @media (max-width: 767px) {
-    /* Mobile app-like overlap: text sits on lower half of portrait. */
+    .hero-portrait-3d {
+      /* Keep stable positioning on mobile. */
+    }
+  }
+
+  /* Crop left/right internally without distorting the square PNG. */
+  .hero-portrait-crop {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-portrait-crop img {
+    width: 100%;
+    min-width: 450px;;
+    max-width: 550px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* Copy overlap styling for mobile + tablet (below lg). */
+  @media (max-width: 1023px) {
+    /* Mobile app-like overlap: copy sits on top of portrait. */
     .hero-media-mobile {
       margin-bottom: -7.5rem;
     }
@@ -224,15 +272,33 @@
     .hero-copy-mobile {
       position: relative;
       z-index: 30;
-    }
-
-    .hero-copy-mobile {
-      background: rgb(2 6 23 / 0.45);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgb(255 255 255 / 0.06);
+      background: linear-gradient(to bottom, rgb(2 6 23 / 0) 0%, rgb(2 6 23 / 0.90) 20%);
       border-radius: 1.25rem;
       padding: 1rem;
+    }
+  }
+
+  /* Tablet range: keep composition but prevent copy/image collision. */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .hero-photo-stage {
+      min-height: 460px;
+    }
+
+    .hero-portrait-3d {
+      /* Reduce the amount of portrait that pops out above the stage. */
+      transform: translateY(10px);
+    }
+
+    .hero-portrait-fade::after {
+      /* Softer fade so it doesn't visually wash over the copy on tablet. */
+      background: linear-gradient(
+        to bottom,
+        rgb(0 0 0 / 0) 0%,
+        rgb(0 0 0 / 0) 82%,
+        rgb(0 0 0 / 0.18) 88%,
+        rgb(0 0 0 / 0.50) 94%,
+        rgb(0 0 0 / 0.85) 100%
+      );
     }
   }
 
@@ -250,14 +316,7 @@
   .typing-wrap {
     display: inline-flex;
     align-items: baseline;
-    min-width: 30ch;
     white-space: nowrap;
-  }
-
-  @media (max-width: 640px) {
-    .typing-wrap {
-      min-width: 24ch;
-    }
   }
 
   .typing-text {
