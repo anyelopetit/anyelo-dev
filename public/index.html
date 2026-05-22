@@ -233,7 +233,7 @@
         <div class="soft-divider"></div>
       </section>
 
-      <section id="sobre-mi" class="theme-light bg-background py-16 sm:py-24">
+      <section id="sobre-mi" class="theme-light bg-background py-8 sm:py-12">
         <div class="section-shell">
           <p class="section-eyebrow">SOBRE MÍ</p>
           <div class="mt-4 grid gap-10 lg:grid-cols-12">
@@ -282,7 +282,7 @@
         </div>
       </section>
 
-      <section id="proyectos" class="theme-light bg-background py-16 sm:py-24">
+      <section id="proyectos" class="theme-light bg-background py-8 sm:py-12">
         <div class="section-shell">
           <div class="flex items-end justify-between gap-6">
             <div>
@@ -381,7 +381,7 @@
         </div>
       </section>
 
-      <section id="servicios" class="theme-light bg-background py-16 sm:py-24">
+      <section id="servicios" class="theme-light bg-background py-8 sm:py-12">
         <div class="section-shell">
           <p class="section-eyebrow">SERVICIOS</p>
           <h2 class="section-title mt-3">Cómo puedo <span class="text-accent">ayudarte</span></h2>
@@ -410,26 +410,249 @@
         </div>
       </section>
 
-      <section id="experiencia" class="theme-light bg-background py-16 sm:py-24">
+      <section id="experiencia" class="theme-light bg-background py-8 sm:py-12" data-component="experience-timeline">
         <div class="section-shell">
-          <p class="section-eyebrow">EXPERIENCIA</p>
-          <h2 class="section-title mt-3">Mi camino profesional</h2>
-          <div class="mt-10 grid gap-4">
-            <article class="premium-card-solid p-6">
-              <p class="text-xs text-textMuted">2023 - Actualidad</p>
-              <h3 class="mt-2 text-sm font-semibold text-textPrimary">Ingeniero de Software Senior</h3>
-              <p class="mt-2 text-sm text-textSecondary">IA, automatización y arquitectura escalable.</p>
-            </article>
-            <article class="premium-card-solid p-6">
-              <p class="text-xs text-textMuted">2019 - 2023</p>
-              <h3 class="mt-2 text-sm font-semibold text-textPrimary">Tech Lead</h3>
-              <p class="mt-2 text-sm text-textSecondary">Equipos y productos SaaS de alto impacto.</p>
-            </article>
-            <article class="premium-card-solid p-6">
-              <p class="text-xs text-textMuted">2014 - 2019</p>
-              <h3 class="mt-2 text-sm font-semibold text-textPrimary">Full Stack Developer</h3>
-              <p class="mt-2 text-sm text-textSecondary">Apps web y mobile para empresas.</p>
-            </article>
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div class="max-w-2xl">
+              <p class="section-eyebrow">EXPERIENCIA</p>
+              <h2 class="section-title mt-3">Mi historia</h2>
+              <p class="mt-4 text-textSecondary leading-relaxed">
+                10+ a&ntilde;os construyendo productos en producci&oacute;n con Ruby on Rails, APIs y PostgreSQL.
+                Me enfoco en arquitectura escalable, performance real y calidad (TDD con RSpec), y uso IA como
+                multiplicador de productividad sin sacrificar criterio.
+              </p>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="nav-pill">Rails 6/7/8</span>
+                <span class="nav-pill">PostgreSQL</span>
+                <span class="nav-pill">RSpec (90%+)</span>
+                <span class="nav-pill">REST/GraphQL</span>
+                <span class="nav-pill">Async (Sidekiq/SQS)</span>
+                <span class="nav-pill">IA aplicada</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience-preview mt-10" data-experience-preview>
+            <ol class="experience-timeline grid gap-5">
+              <li class="experience-item">
+                <span class="experience-dot" aria-hidden="true"></span>
+                <p class="experience-meta">Nov 2021 &ndash; Presente</p>
+                <div class="experience-card">
+                  <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h3 class="text-sm font-semibold text-textPrimary">Senior Full Stack Engineer &middot; Rankmi</h3>
+                    <span class="experience-pill">Remote (Chile)</span>
+                  </div>
+                  <p class="mt-2 text-sm text-textSecondary">
+                    Features customer-facing en Rails sobre microservicios (ATS, LMS, Core, Workflows) para 1,000+ clientes enterprise LATAM.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="experience-pill">Rails</span>
+                    <span class="experience-pill">React</span>
+                    <span class="experience-pill">TypeScript</span>
+                    <span class="experience-pill">PostgreSQL</span>
+                    <span class="experience-pill">AWS SNS/SQS</span>
+                    <span class="experience-pill">Kubernetes</span>
+                  </div>
+                  <ul class="mt-4 grid gap-2 text-sm text-textSecondary leading-relaxed">
+                    <li>Dise&ntilde;o de APIs REST versionadas para frontends React, cuidando latencia y separaci&oacute;n de dominio.</li>
+                    <li>Investigaciones de performance con <span class="font-medium">EXPLAIN ANALYZE</span>: resoluci&oacute;n de N+1 y cuellos de botella en endpoints de alto tr&aacute;fico.</li>
+                    <li>Pipeline async con SNS/SQS para desacoplar flujos cr&iacute;ticos y mejorar escalabilidad.</li>
+                    <li>Est&aacute;ndares de testing con RSpec (unit/integration/request): 90%+ de cobertura en m&oacute;dulos nuevos.</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="experience-item">
+                <span class="experience-dot" aria-hidden="true"></span>
+                <p class="experience-meta">Jun 2021 &ndash; Nov 2021</p>
+                <div class="experience-card">
+                  <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h3 class="text-sm font-semibold text-textPrimary">Full Stack Engineer &middot; Shipit CL</h3>
+                    <span class="experience-pill">Remote (Chile)</span>
+                  </div>
+                  <p class="mt-2 text-sm text-textSecondary">
+                    Plataforma de microservicios (15+ repos) para log&iacute;stica de miles de comercios.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="experience-pill">Rails</span>
+                    <span class="experience-pill">React</span>
+                    <span class="experience-pill">RSpec</span>
+                    <span class="experience-pill">Cypress</span>
+                    <span class="experience-pill">Intercom</span>
+                    <span class="experience-pill">Mixpanel</span>
+                  </div>
+                  <ul class="mt-4 grid gap-2 text-sm text-textSecondary leading-relaxed">
+                    <li>Construcci&oacute;n y documentaci&oacute;n de endpoints REST consumidos por React.</li>
+                    <li>Instrumentaci&oacute;n con Mixpanel para medir impacto y tomar decisiones por datos.</li>
+                    <li>TDD estricto con RSpec + E2E con Cypress, integrado a CI/CD.</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="experience-item">
+                <span class="experience-dot" aria-hidden="true"></span>
+                <p class="experience-meta">Sep 2020 &ndash; Jun 2021</p>
+                <div class="experience-card">
+                  <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h3 class="text-sm font-semibold text-textPrimary">Senior Ruby on Rails Engineer &middot; ViveTech / Mercatiendas</h3>
+                    <span class="experience-pill">Remote (Colombia)</span>
+                  </div>
+                  <p class="mt-2 text-sm text-textSecondary">
+                    Due&ntilde;o del backend de una plataforma e-commerce multi-tenant (subdominios por tienda), inventario aislado y manejo de themes.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="experience-pill">Rails</span>
+                    <span class="experience-pill">PostgreSQL</span>
+                    <span class="experience-pill">Docker Compose</span>
+                    <span class="experience-pill">GCP</span>
+                    <span class="experience-pill">AlpineJS</span>
+                    <span class="experience-pill">Axlsx/Roo</span>
+                  </div>
+                  <ul class="mt-4 grid gap-2 text-sm text-textSecondary leading-relaxed">
+                    <li>Containerizaci&oacute;n completa y deploys reproducibles (menos drift, m&aacute;s velocidad en onboarding).</li>
+                    <li>Import/export masivo de inventario con Axlsx y Roo para reducir carga operativa.</li>
+                    <li>UI reactiva con AlpineJS (carrito, filtros, categor&iacute;as) para mejorar flujo sin recargar p&aacute;gina.</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+
+            <div class="experience-preview-fade" aria-hidden="true"></div>
+          </div>
+
+          <div class="experience-toggle-collapsed" data-experience-toggle-collapsed>
+            <button
+              class="btn-secondary h-11"
+              type="button"
+              data-experience-toggle="open"
+              aria-controls="experience-more"
+              aria-expanded="false"
+            >
+              Mostrar m&aacute;s
+            </button>
+          </div>
+
+          <div id="experience-more" class="mt-5" hidden>
+            <ol class="experience-timeline grid gap-5">
+              <li class="experience-item">
+                <span class="experience-dot" aria-hidden="true"></span>
+                <p class="experience-meta">Jul 2019 &ndash; Sep 2020</p>
+                <div class="experience-card">
+                  <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h3 class="text-sm font-semibold text-textPrimary">Ruby on Rails Engineer &middot; Elitgon / Weclin</h3>
+                    <span class="experience-pill">Remote (Colombia)</span>
+                  </div>
+                  <p class="mt-2 text-sm text-textSecondary">
+                    REST API mobile-first para marketplace iOS de servicios de limpieza: booking, scheduling, matching y pagos.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="experience-pill">Rails</span>
+                    <span class="experience-pill">PostgreSQL</span>
+                    <span class="experience-pill">REST API</span>
+                    <span class="experience-pill">RSpec</span>
+                    <span class="experience-pill">Bootstrap</span>
+                  </div>
+                  <ul class="mt-4 grid gap-2 text-sm text-textSecondary leading-relaxed">
+                    <li>TDD con RSpec (models/controllers/services/system) manteniendo 90%+ de cobertura.</li>
+                    <li>Patrones de service objects, convenciones de naming y est&aacute;ndares de testing por equipo.</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="experience-item">
+                <span class="experience-dot" aria-hidden="true"></span>
+                <p class="experience-meta">Jan 2019 &ndash; Jun 2019</p>
+                <div class="experience-card">
+                  <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h3 class="text-sm font-semibold text-textPrimary">Ruby on Rails Developer &middot; Tecno Software / TecnoUniverse</h3>
+                    <span class="experience-pill">Remote (Spain)</span>
+                  </div>
+                  <p class="mt-2 text-sm text-textSecondary">
+                    Features full-stack en una red social profesional: autenticaci&oacute;n, permisos, pagos y real-time.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="experience-pill">Rails</span>
+                    <span class="experience-pill">Sidekiq/Redis</span>
+                    <span class="experience-pill">ActionCable</span>
+                    <span class="experience-pill">Stripe</span>
+                    <span class="experience-pill">PostgreSQL</span>
+                    <span class="experience-pill">AWS</span>
+                  </div>
+                  <ul class="mt-4 grid gap-2 text-sm text-textSecondary leading-relaxed">
+                    <li>Auth con Devise, RBAC con Rolify y permisos con CanCanCan.</li>
+                    <li>Chat privado en tiempo real con ActionCable WebSockets + notificaciones.</li>
+                    <li>Pagos con Stripe y geolocalizaci&oacute;n con Google Maps API.</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="experience-item">
+                <span class="experience-dot" aria-hidden="true"></span>
+                <p class="experience-meta">Jan 2016 &ndash; Jan 2018</p>
+                <div class="experience-card">
+                  <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h3 class="text-sm font-semibold text-textPrimary">Backend Dept. Coordinator &middot; Slice Group / Keppler Admin CMS</h3>
+                    <span class="experience-pill">Venezuela</span>
+                  </div>
+                  <p class="mt-2 text-sm text-textSecondary">
+                    Liderazgo backend en un CMS open-source con arquitectura plugin-based para Ruby on Rails.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="experience-pill">Rails</span>
+                    <span class="experience-pill">PostgreSQL</span>
+                    <span class="experience-pill">Vue</span>
+                    <span class="experience-pill">REST API</span>
+                  </div>
+                  <ul class="mt-4 grid gap-2 text-sm text-textSecondary leading-relaxed">
+                    <li>Sistema din&aacute;mico de plugins: instalaci&oacute;n/desinstalaci&oacute;n, generaci&oacute;n de formularios, SEO metadata e im&aacute;genes.</li>
+                    <li>Iniciativas cross-funcional: tooling para developers dentro del frontend (console + branch context plugin).</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+
+            <div class="mt-10 premium-card-solid p-6">
+              <h3 class="text-sm font-semibold text-textPrimary">Diferenciador: IA aplicada (de verdad)</h3>
+              <p class="mt-2 text-sm text-textSecondary leading-relaxed">
+                Integro herramientas como Claude Code, Cursor (Rules/MCP) y GitHub Copilot a lo largo del ciclo completo: exploraci&oacute;n de arquitectura,
+                refactors a escala, generaci&oacute;n de tests, an&aacute;lisis de performance y code reviews. La meta no es "hacerlo r&aacute;pido", sino
+                llegar m&aacute;s r&aacute;pido a decisiones correctas con full ownership.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="experience-pill">Claude Code</span>
+                <span class="experience-pill">Cursor (MCP)</span>
+                <span class="experience-pill">GitHub Copilot</span>
+                <span class="experience-pill">Prompt Engineering</span>
+              </div>
+            </div>
+
+            <div class="mt-6 grid gap-4 lg:grid-cols-3">
+              <div class="premium-card-solid p-6">
+                <h3 class="text-sm font-semibold text-textPrimary">Educaci&oacute;n</h3>
+                <p class="mt-2 text-sm text-textSecondary">B.Sc. Systems Engineering (UNEFA, Venezuela) &middot; 2014&ndash;2019</p>
+              </div>
+              <div class="premium-card-solid p-6">
+                <h3 class="text-sm font-semibold text-textPrimary">Ingl&eacute;s</h3>
+                <p class="mt-2 text-sm text-textSecondary">Professional working proficiency (B2)</p>
+              </div>
+              <div class="premium-card-solid p-6">
+                <h3 class="text-sm font-semibold text-textPrimary">Modo de trabajo</h3>
+                <p class="mt-2 text-sm text-textSecondary">Remote-first &middot; Full-time &middot; Async-friendly</p>
+              </div>
+            </div>
+
+            <div class="experience-toggle-expanded" data-experience-toggle-expanded>
+              <button
+                class="btn-secondary h-11"
+                type="button"
+                data-experience-toggle="close"
+                aria-controls="experience-more"
+                aria-expanded="true"
+              >
+                Mostrar menos
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -449,7 +672,7 @@
         </div>
       </section>
 
-      <section id="blog" class="py-16 sm:py-24">
+      <section id="blog" class="py-8 sm:py-12">
         <div class="section-shell">
           <div class="flex items-end justify-between gap-6">
             <div>
@@ -468,7 +691,7 @@
         </div>
       </section>
 
-      <section class="theme-dark py-16 sm:py-24">
+      <section class="theme-dark py-8 sm:py-12">
         <div class="section-shell">
           <div class="premium-card overflow-hidden p-10 sm:p-14">
             <h2 class="text-3xl sm:text-4xl font-semibold text-textPrimary">¿Tienes un proyecto en mente?</h2>
@@ -484,7 +707,7 @@
         </div>
       </section>
 
-      <section id="contacto" class="theme-dark py-16 sm:py-24">
+      <section id="contacto" class="theme-dark py-8 sm:py-12">
         <div class="section-shell">
           <p class="section-eyebrow">CONTACTO</p>
           <h2 class="section-title mt-3">Hablemos de tu proyecto</h2>

@@ -628,6 +628,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Guarantee that `hidden` removes elements from layout. */
+
+[hidden] {
+  display: none !important;
+}
+
 body {
   --tw-bg-opacity: 1;
   background-color: rgb(var(--color-background) / var(--tw-bg-opacity, 1));
@@ -1186,6 +1192,174 @@ h1, h2, h3 {
   padding-bottom: 0.75rem;
 }
 
+/* Experience timeline: readable, scan-friendly, minimal motion. */
+
+.experience-timeline {
+  position: relative;
+  --experience-axis-x: 0.9rem;
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  left: var(--experience-axis-x);
+  width: 1px;
+  background: rgb(var(--color-border) / 0.9);
+}
+
+.experience-item {
+  position: relative;
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 2.25rem;
+}
+
+@media (min-width: 1024px) {
+  .experience-timeline {
+    --experience-axis-x: calc(10rem + 1.25rem);
+  }
+
+  .experience-item {
+    grid-template-columns: 10rem 1fr;
+    gap: 1.5rem;
+    padding-left: 0;
+    align-items: start;
+  }
+}
+
+.experience-dot {
+  position: absolute;
+  left: var(--experience-axis-x);
+  top: 1.25rem;
+  transform: translateX(-50%);
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 9999px;
+  background: rgb(var(--color-surface));
+  box-shadow: 0 0 0 2px rgb(var(--color-accent) / 0.25);
+}
+
+.experience-item:hover .experience-dot,
+  .experience-item:focus-within .experience-dot {
+  box-shadow: 0 0 0 2px rgb(var(--color-accent) / 0.55), 0 0 0 8px rgb(var(--color-accent) / 0.08);
+}
+
+.experience-meta {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(var(--color-text-muted) / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 1024px) {
+  .experience-meta {
+    padding-top: 0.5rem;
+    text-align: right;
+  }
+}
+
+.experience-card {
+  border-width: 1px;
+  border-color: rgb(var(--color-border) / 0.7);
+  border-radius: var(--radius-2xl);
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--color-card) / var(--tw-bg-opacity, 1));
+  --tw-shadow: var(--shadow-soft);
+  --tw-shadow-colored: var(--shadow-soft);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  padding: 1.5rem;
+}
+
+.experience-preview {
+  position: relative;
+}
+
+/* Keep the fade behind preview content. */
+
+.experience-preview > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Dedicated fade layer (top -> bottom opacity 0). */
+
+.experience-preview-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 9.5rem;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--color-background) / 0.95),
+      rgb(var(--color-background) / 0.55),
+      rgb(var(--color-background) / 0)
+    );
+}
+
+.experience-preview.is-expanded .experience-preview-fade {
+  display: none;
+}
+
+.experience-toggle-collapsed {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-top: -2.25rem;
+  padding-top: 1.25rem;
+}
+
+.experience-toggle-expanded {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Expanded experience content: animate in (no layout jump). */
+
+#experience-more {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 220ms var(--easing-primary), transform 220ms var(--easing-primary);
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+
+#experience-more.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #experience-more {
+    transition: none;
+    transform: none;
+  }
+}
+
+.experience-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: var(--radius-full);
+  border-width: 1px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  border-color: rgb(var(--color-primary) / 0.14);
+  background-color: rgb(var(--color-primary) / 0.06);
+  color: rgb(var(--color-primary) / 0.82);
+}
+
 .nav-pill {
   display: inline-flex;
   align-items: center;
@@ -1424,6 +1598,10 @@ h1, h2, h3 {
 
 .w-full {
   width: 100%;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .max-w-\[1200px\] {
@@ -1764,6 +1942,11 @@ h1, h2, h3 {
   padding-bottom: 0.75rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1778,6 +1961,10 @@ h1, h2, h3 {
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-2xl {
@@ -2055,6 +2242,11 @@ h1, h2, h3 {
     padding-bottom: 6rem;
   }
 
+  .sm\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   .sm\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -2140,12 +2332,28 @@ h1, h2, h3 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:items-end {
+    align-items: flex-end;
+  }
+
   .lg\:items-center {
     align-items: center;
   }
 
   .lg\:justify-end {
     justify-content: flex-end;
+  }
+
+  .lg\:justify-between {
+    justify-content: space-between;
   }
 
   .lg\:text-6xl {

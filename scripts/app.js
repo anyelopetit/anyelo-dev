@@ -3,6 +3,7 @@ import { initMobileMenu } from "./components/mobile-menu.js";
 import { initContactForm } from "./components/contact-form.js";
 import { initSpells } from "./components/spells.js";
 import { initHeroTyping } from "./components/hero-typing.js";
+import { initExperienceTimeline } from "./components/experience-timeline.js";
 import { initLenis } from "./animations/lenis.js";
 import { initReveals } from "./animations/reveal.js";
 
@@ -12,6 +13,7 @@ initMobileMenu();
 initContactForm();
 initSpells();
 initHeroTyping();
+initExperienceTimeline();
 initLenis();
 initReveals();
 
