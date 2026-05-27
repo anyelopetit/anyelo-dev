@@ -170,12 +170,25 @@
 
   .blog-card:hover {
     box-shadow: var(--shadow-medium);
+    transform: translateY(-6px) perspective(900px) rotateX(2deg) scale(1.01);
   }
 
   .blog-card:focus-visible {
     outline: 2px solid transparent;
     outline-offset: 2px;
     box-shadow: 0 0 0 4px rgb(var(--color-accent) / 0.24), var(--shadow-medium);
+    transform: translateY(-4px) perspective(900px) rotateX(1.6deg) scale(1.01);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .blog-card {
+      transition: box-shadow 160ms ease;
+    }
+
+    .blog-card:hover,
+    .blog-card:focus-visible {
+      transform: none;
+    }
   }
 
   .blog-card-media {
